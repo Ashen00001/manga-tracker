@@ -1,0 +1,10 @@
+services:
+  tracker:
+    build: .
+    container_name: manga-tracker
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/data
+    ports:
+      - "8787:8787"

@@ -1,0 +1,12 @@
+{
+  "name": "Manga Tracker",
+  "short_name": "Manga",
+  "description": "Find manga volumes in stock at stores near you.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0e11",
+  "theme_color": "#0e0e11",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+ "products": {
+  "nodes": [
+   {
+    "variants": {
+     "nodes": [
+      {
+       "barcode": "9781974752690",
+       "price": {
+        "amount": "11.99"
+       },
+       "storeAvailability": {
+        "nodes": [
+         {
+          "available": false,
+          "location": {
+           "name": "Capitol Hill-1234",
+           "address": {
+            "formatted": [
+             "Example Plaza",
+             "100 Example St Suite 100",
+             "Seattle WA 98101",
+             "United States"
+            ],
+            "latitude": 47.6062,
+            "longitude": -122.3321,
+            "phone": "206-555-0100"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Northgate Station-2280",
+           "address": {
+            "formatted": [
+             "Northgate Station",
+             "401 NE Northgate Way #1100",
+             "Seattle WA 98125",
+             "United States"
+            ],
+            "latitude": 47.70612269999999,
+            "longitude": -122.3258649,
+            "phone": "206-417-2967"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Woodinville-2910",
+           "address": {
+            "formatted": [
+             "Block C of Downtown Woodinville",
+             "18025 Garden Way N.E.",
+             "Woodinville WA 98072",
+             "United States"
+            ],
+            "latitude": 47.7563632,
+            "longitude": -122.1530454,
+            "phone": "425-398-1990"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "University District-3563",
+           "address": {
+            "formatted": [
+             "4324 University Way NE",
+             "Seattle WA 98105",
+             "United States"
+            ],
+            "latitude": 47.66024059999999,
+            "longitude": -122.3127824,
+            "phone": "206-703-8915"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Alderwood-2888",
+           "address": {
+            "formatted": [
+             "19401 Alderwood Mall Parkway",
+             "Lynnwood WA 98036",
+             "United States"
+            ],
+            "latitude": 47.8219711,
+            "longitude": -122.2698603,
+            "phone": "425-771-2220"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Bellevue Square-3525",
+           "address": {
+            "formatted": [
+             "Bellevue Square",
+             "1140 Bellevue Square",
+             "Bellevue WA 98004",
+             "United States"
+            ],
+            "latitude": 47.6145332,
+            "longitude": -122.2031295,
+            "phone": "425-552-4118"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Bellevue-3418",
+           "address": {
+            "formatted": [
+             "Crossroads Shopping Center",
+             "15600 NE 8th Street Suite F17",
+             "Bellevue WA 98008",
+             "United States"
+            ],
+            "latitude": 47.6171586,
+            "longitude": -122.1536267,
+            "phone": "425-519-6192"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Pike Street-3592",
+           "address": {
+            "formatted": [
+             "520 Pike Street",
+             "Seattle WA 98101",
+             "United States"
+            ],
+            "latitude": 47.6113021,
+            "longitude": -122.3350376,
+            "phone": "206-291-9088"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Issaquah-3506",
+           "address": {
+            "formatted": [
+             "Issaquah Commons",
+             "775 NW Gilman Blvd Suite C-01",
+             "Issaquah WA 98027",
+             "United States"
+            ],
+            "latitude": 47.54304190000001,
+            "longitude": -122.0498949,
+            "phone": "425-491-2133"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Southcenter-2607",
+           "address": {
+            "formatted": [
+             "300 Andover Park W Ste 200",
+             "Tukwila WA 98188",
+             "United States"
+            ],
+            "latitude": 47.4553823,
+            "longitude": -122.2523302,
+            "phone": "206-575-3965"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Kitsap Mall-2281",
+           "address": {
+            "formatted": [
+             "PO Box 250",
+             "10315 Silverdale Way NW",
+             "Silverdale WA 98383",
+             "United States"
+            ],
+            "latitude": 47.65805,
+            "longitude": -122.7120272,
+            "phone": "360-698-0945"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Federal Way-2706",
+           "address": {
+            "formatted": [
+             "Pavilions Centre",
+             "31325 Pacific Highway South",
+             "Federal Way WA 98003",
+             "United States"
+            ],
+            "latitude": 47.32056619999999,
+            "longitude": -122.3146983,
+            "phone": "253-839-2535"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Puyallup-3507",
+           "address": {
+            "formatted": [
+             "South Hill Mall",
+             "3500 S. Meridian Unit No. 800",
+             "Puyallup WA 98373",
+             "United States"
+            ],
+            "latitude": 47.158102,
+            "longitude": -122.297266,
+            "phone": "253-466-6574"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Lakewood-3535",
+           "address": {
+            "formatted": [
+             "Lakewood Towne Center",
+             "10330 59th Ave Southwest",
+             "Lakewood WA 98499",
+             "United States"
+            ],
+            "latitude": 47.1636404,
+            "longitude": -122.5160137,
+            "phone": "253-402-2720"
+           }
+          }
+         },
+         {
+          "available": false,
+          "location": {
+           "name": "Olympia-2653",
+           "address": {
+            "formatted": [
+             "1530 Black Lake Blvd SW",
+             "Olympia WA 98502",
+             "United States"
+            ],
+            "latitude": 47.0334821,
+            "longitude": -122.9373361,
+            "phone": "360-534-0388"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Bellingham WA-2682",
+           "address": {
+            "formatted": [
+             "4099 Meridian St.",
+             "Bellingham WA 98226",
+             "United States"
+            ],
+            "latitude": 48.7894703,
+            "longitude": -122.4868048,
+            "phone": "360-647-7018"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Vancouver-2679",
+           "address": {
+            "formatted": [
+             "Vancouver Plaza",
+             "7700 NE Fourth Plain Blvd",
+             "Vancouver WA 98662",
+             "United States"
+            ],
+            "latitude": 45.6487742,
+            "longitude": -122.5924551,
+            "phone": "360-253-9007"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Cascade Station-3411",
+           "address": {
+            "formatted": [
+             "Cascade Station Shopping Center",
+             "9963 NE Cascades Parkway",
+             "Portland OR 97220",
+             "United States"
+            ],
+            "latitude": 45.5744818,
+            "longitude": -122.5605537,
+            "phone": "503-946-7673"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Hillsboro-3413",
+           "address": {
+            "formatted": [
+             "Tanasbourne Town Center",
+             "11125 Northeast Evergreen Parkway",
+             "Hillsboro OR 97006",
+             "United States"
+            ],
+            "latitude": 45.5373716,
+            "longitude": -122.8636909,
+            "phone": "503-495-8324"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Clackamas Town Center-2262",
+           "address": {
+            "formatted": [
+             "Clackamas Town Ctr Mall",
+             "12000 SE 82nd Avenue",
+             "Portland OR 97086",
+             "United States"
+            ],
+            "latitude": 45.4344576,
+            "longitude": -122.5712084,
+            "phone": "503-786-3464"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Bridgeport Village-2371",
+           "address": {
+            "formatted": [
+             "7227 SW Bridgeport Rd.",
+             "Tigard OR 97224",
+             "United States"
+            ],
+            "latitude": 45.3962318,
+            "longitude": -122.7512774,
+            "phone": "503-431-7575"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Columbia Center-2879",
+           "address": {
+            "formatted": [
+             "1321 N Columbia Center Blvd Ste 700",
+             "1321 N. Columbia Center Blvd.",
+             "Kennewick WA 99336",
+             "United States"
+            ],
+            "latitude": 46.224913,
+            "longitude": -119.2268636,
+            "phone": "509-736-3116"
+           }
+          }
+         },
+         {
+          "available": false,
+          "location": {
+           "name": "Salem OR-3430",
+           "address": {
+            "formatted": [
+             "Willamette Town Center",
+             "827 Lancaster Dr NE Suite 110",
+             "Salem OR 97301",
+             "United States"
+            ],
+            "latitude": 44.9419444,
+            "longitude": -122.9866667,
+            "phone": "234-255-0845"
+           }
+          }
+         },
+         {
+          "available": true,
+          "location": {
+           "name": "Spokane at Northtown Mall-2997",
+           "address": {
+            "formatted": [
+             "Northtown Mall",
+             "4750 North Division Street",
+             "Spokane WA 99207",
+             "United States"
+            ],
+            "latitude": 47.7026589,
+            "longitude": -117.4086524,
+            "phone": "509-482-4235"
+           }
+          }
+         },
+         {
+          "available": false,
+          "location": {
+           "name": "Spokane Valley-2951",
+           "address": {
+            "formatted": [
+             "Market Pointe I Shopping Center",
+             "15310 E. Indiana Ave.",
+             "Spokane WA 99216",
+             "United States"
+            ],
+            "latitude": 47.6710316,
+            "longitude": -117.2016048,
+            "phone": "509-922-4104"
+           }
+          }
+         }
+        ]
+       }
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

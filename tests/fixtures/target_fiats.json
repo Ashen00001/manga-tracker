@@ -1,0 +1,189 @@
+{
+ "data": {
+  "fulfillment_fiats": {
+   "product_id": "93794848",
+   "product": {
+    "__typename": "Product",
+    "tcin": "93794848",
+    "item": {
+     "dpci": "059-04-5846",
+     "relationship_type_code": "SA"
+    }
+   },
+   "buy_unit_of_measure": "EACH",
+   "availability_unit_of_measure": "EACH",
+   "available_to_purchase_date_time": "1970-01-01T00:00:00.000Z",
+   "street_date": "2025-01-07T06:00:00.000Z",
+   "locations": [
+    {
+     "location_id": "1118",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 3.55,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "1118",
+      "main_voice_phone_number": "425-482-6410",
+      "location_name": "Woodinville",
+      "mailing_address": {
+       "address_line1": "13950 NE 178th Pl",
+       "city": "Woodinville",
+       "postal_code": "98072-3523",
+       "state": "Washington"
+      }
+     }
+    },
+    {
+     "location_id": "995",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 5.47,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "995",
+      "main_voice_phone_number": "425-556-9533",
+      "location_name": "Redmond",
+      "mailing_address": {
+       "address_line1": "17700 NE 76th St",
+       "city": "Redmond",
+       "postal_code": "98052-3300",
+       "state": "Washington"
+      }
+     }
+    },
+    {
+     "location_id": "1284",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 5.83,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "1284",
+      "main_voice_phone_number": "206-494-0897",
+      "location_name": "Northgate",
+      "mailing_address": {
+       "address_line1": "302 NE Northgate Way",
+       "city": "Seattle",
+       "postal_code": "98125-6047",
+       "state": "Washington"
+      }
+     }
+    },
+    {
+     "location_id": "3275",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 7.32,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "3275",
+      "main_voice_phone_number": "425-362-1530",
+      "location_name": "Bellevue 4th St and 116th Ave",
+      "mailing_address": {
+       "address_line1": "272 116th Ave NE",
+       "city": "Bellevue",
+       "postal_code": "98004-5213",
+       "state": "Washington"
+      }
+     }
+    },
+    {
+     "location_id": "338",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 8.49,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "338",
+      "main_voice_phone_number": "425-670-1435",
+      "location_name": "Lynnwood",
+      "mailing_address": {
+       "address_line1": "18305 Alderwood Mall Pkwy",
+       "city": "Lynnwood",
+       "postal_code": "98037-3961",
+       "state": "Washington"
+      }
+     }
+    },
+    {
+     "location_id": "2786",
+     "location_available_to_promise_quantity": 0.0,
+     "distance": 9.91,
+     "order_pickup": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "in_store_only": {
+      "availability_status": "OUT_OF_STOCK"
+     },
+     "ship_to_store": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "curbside": {
+      "availability_status": "UNAVAILABLE"
+     },
+     "store": {
+      "store_id": "2786",
+      "main_voice_phone_number": "206-494-3250",
+      "location_name": "Seattle Pike Plaza",
+      "mailing_address": {
+       "address_line1": "1401 2nd Ave",
+       "city": "Seattle",
+       "postal_code": "98101-2007",
+       "state": "Washington"
+      }
+     }
+    }
+   ]
+  }
+ }
+}

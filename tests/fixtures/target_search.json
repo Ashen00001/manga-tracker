@@ -1,0 +1,88 @@
+{
+ "data": {
+  "search": {
+   "products": [
+    {
+     "__typename": "ProductSummary",
+     "tcin": "93794848",
+     "fast_selling": {
+      "fast_selling": false,
+      "queue_gated": false
+     },
+     "original_tcin": "93794848",
+     "item": {
+      "primary_barcode": null,
+      "enrichment": {
+       "buy_url": "https://www.target.com/p/chainsaw-man-vol-17-by-tatsuki-fujimoto-paperback/-/A-93794848",
+       "image_info": {
+        "base_url": "//target.scene7.com/is/image/Target/",
+        "primary_image": {
+         "url": "https://target.scene7.com/is/image/Target/GUEST_ba0de951-9a7b-4db4-87bb-5afedb449ac7",
+         "image_name": "GUEST_ba0de951-9a7b-4db4-87bb-5afedb449ac7"
+        },
+        "swatch_image": {}
+       }
+      },
+      "product_description": {
+       "title": "Chainsaw Man, Vol. 17 - by Tatsuki Fujimoto (Paperback)",
+       "bullet_descriptions": [
+        "<B>Suggested Age:</B> Adult",
+        "<B>Number of Pages:</B> 184",
+        "<B>Genre:</B> Comics & Graphic Novels",
+        "<B>Format:</B> Paperback",
+        "<B>Author:</B> Tatsuki Fujimoto",
+        "<B>Language:</B> English"
+       ],
+       "soft_bullets": {
+        "bullets": [
+         "Supernatural rip-roaring chainsaw action is way over the top in Shonen Jump\u2019s hot new series of 2019!",
+         "Releases 2 times a year for 17+ volumes. Series is ongoing.",
+         "Volumes 1\u201314 have sold over 3.5 million units (BookScan 5/24).",
+         "Chainsaw Man is a regular on the BookScan Graphic Novels Top 50 charts, new volumes consistently debut at #1.",
+         "Anime streams on multiple platforms including Amazon Prime, Crunchyroll, and Hulu.",
+         "Franchise\u2019s manga is one of VIZ\u2019s most popular titles from Shonen Jump, and new chapters are among the top-read chapters on VIZ.com."
+        ]
+       }
+      }
+     },
+     "promotions": [
+      {
+       "plp_message": "Buy 2, get 1 free select music, books & more",
+       "promotion_id": "521149300",
+       "promotion_class": "BOGO",
+       "subscription_type": "ALL",
+       "threshold_type": "quantity",
+       "threshold_value": 2.0,
+       "reward_type": "FixedPrice",
+       "reward_value": 0.0,
+       "circle_offer": false,
+       "mass_offer": true,
+       "channel": "online_and_store"
+      }
+     ],
+     "price": {
+      "current_retail": 8.99,
+      "display_was_now": false,
+      "formatted_current_price": "$8.99",
+      "formatted_current_price_type": "reg",
+      "reg_retail": 8.99,
+      "location_id": 3991,
+      "price_handle": "When purchased online"
+     },
+     "ratings_and_reviews": {
+      "statistics": {
+       "rating": {
+        "average": 5.0,
+        "count": 1
+       }
+      }
+     },
+     "category": {
+      "category_id": "lx3lk",
+      "parent_category_id": "5xsxd"
+     }
+    }
+   ]
+  }
+ }
+}
