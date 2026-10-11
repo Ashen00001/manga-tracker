@@ -45,9 +45,25 @@ Tests: `pip install pytest && pytest` (parsers run against recorded real respons
 3. Discord **Settings → Advanced → Developer Mode** on. Right-click your name, **Copy User ID**, and put it in `DISCORD_USER_ID`.
 4. `python -m tracker test-discord`
 
-## Deploy (Oracle Cloud free tier)
+## Run it on a Windows PC (that sleeps)
 
-Works on the free Ampere (ARM) or AMD VMs.
+After the venv and `.env` are set up:
+
+```powershell
+.\scripts\install-windows.ps1                      # or -WakeHours 9,13,17,21
+```
+
+No admin needed. This sets up:
+
+- **"Manga Tracker" task:** starts the server windowless at logon, bound to `127.0.0.1` only, and restarts it if it crashes. Logs go to `data\server.log`.
+- **"Manga Tracker Check" task:** wakes the PC from sleep at 8:00, 12:00, 16:00 and 20:00 to run the watchlist check, then Windows puts it back to sleep a couple of minutes later. Missed runs (e.g. the PC was off) run at the next logon. Logs go to `data\check.log`.
+- **Tailscale serve:** publishes the app to your tailnet only, over HTTPS, at `https://<pc>.<tailnet>.ts.net:8787`. Put that in `PUBLIC_URL`.
+
+Wake timers need **sleep**, not shutdown, and "Allow wake timers" on in the power plan (it's on by default). The server and the wake task share a wall-clock "last checked" stamp in the DB, so there's never a double check. Remove everything with `.\scripts\install-windows.ps1 -Uninstall`.
+
+## Deploy to a Linux server (Docker)
+
+Any always-on box works: a Pi, an old laptop, or a free cloud VM (Oracle's free Ampere/AMD VMs, Google's e2-micro). A home connection is better, because some stores block datacenter IPs.
 
 ```bash
 # on the server
@@ -66,6 +82,6 @@ Set `PUBLIC_URL` so Discord alerts open the right volume in the app.
 
 ## Notes
 
-- Watchlist checks run every `CHECK_INTERVAL_HOURS` inside the server process. The first check of a new watch only records a baseline, so you're alerted on *changes*. If a store fails to load, it's skipped rather than treated as "out of stock", so you don't get fake restock alerts.
+- Watchlist checks run every `CHECK_INTERVAL_HOURS` inside the server process (timed by wall clock, so sleep doesn't throw them off). The first check of a new watch only records a baseline, so you're alerted on *changes*. If a store fails to load, it's skipped rather than treated as "out of stock", so you don't get fake restock alerts.
 - Retailer APIs are unofficial (except B&N's Storefront API) and can change; each store is isolated in its own module.
 - Data is a single SQLite file in `DATA_DIR` (`./data` by default).

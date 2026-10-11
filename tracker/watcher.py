@@ -2,6 +2,10 @@
 import asyncio
 import json
 import logging
+import socket
+import sys
+import time
+from contextlib import contextmanager
 
 from . import catalog, db, notify, stock
 from .config import settings
@@ -77,7 +81,44 @@ def check_series(watch: dict, send: bool = True) -> list[Book]:
     return fresh
 
 
+@contextmanager
+def keep_awake():
+    """Hold off Windows sleep for the duration of a check.
+
+    After a wake timer fires, Windows goes back to sleep ~2 minutes later unless
+    something asks it not to, which could cut a slow Target lookup off mid-check.
+    """
+    if sys.platform != "win32":
+        yield
+        return
+    import ctypes
+    es_continuous, es_system_required = 0x80000000, 0x00000001
+    ctypes.windll.kernel32.SetThreadExecutionState(es_continuous | es_system_required)
+    try:
+        yield
+    finally:
+        ctypes.windll.kernel32.SetThreadExecutionState(es_continuous)
+
+
+def wait_for_network(timeout: float = 90, host: str = "www.barnesandnoble.com") -> bool:
+    """Right after a wake the network (and VPN) can take a bit to come back."""
+    deadline = time.monotonic() + timeout
+    while True:
+        try:
+            socket.create_connection((host, 443), timeout=5).close()
+            return True
+        except OSError:
+            if time.monotonic() >= deadline:
+                return False
+            time.sleep(3)
+
+
 def check_all(send: bool = True) -> dict:
+    with keep_awake():
+        return _check_all(send)
+
+
+def _check_all(send: bool) -> dict:
     summary = {"volumes": 0, "series": 0, "restocks": 0, "new_volumes": 0, "errors": 0}
     for watch in db.list_watches("series"):
         try:
@@ -97,12 +138,40 @@ def check_all(send: bool = True) -> dict:
     return summary
 
 
+POLL_SECONDS = 300
+DUE_SLACK_SECONDS = 15 * 60  # so a scheduled wake at 12:00 isn't skipped because the last check ran at 8:05
+
+
+def min_gap_seconds() -> float:
+    return max(settings.check_interval_hours * 3600 - DUE_SLACK_SECONDS, 60)
+
+
+def is_due() -> bool:
+    last = db.last_run("watchlist")
+    return last is None or time.time() - last >= min_gap_seconds()
+
+
+def run_if_due(send: bool = True) -> dict | None:
+    """Run the watchlist check unless one ran recently. Returns None when skipped.
+
+    Uses wall-clock time stored in the DB rather than a sleeping timer, so it behaves
+    when the machine sleeps, and so the server and the wake task never both check.
+    """
+    if not is_due():
+        return None
+    if not wait_for_network():
+        db.log_event("error", "Skipped the watchlist check: no network")
+        return None
+    if not db.claim_run("watchlist", min_gap_seconds()):
+        return None
+    return check_all(send)
+
+
 async def run_forever() -> None:
-    interval = settings.check_interval_hours * 3600
     await asyncio.sleep(30)  # let the server finish starting
     while True:
         try:
-            await asyncio.to_thread(check_all)
+            await asyncio.to_thread(run_if_due)
         except Exception:
             log.exception("watchlist check crashed")
-        await asyncio.sleep(interval)
+        await asyncio.sleep(POLL_SECONDS)

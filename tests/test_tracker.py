@@ -171,6 +171,24 @@ def test_series_watch_learns_then_reports_new_volumes(monkeypatch):
     assert any(w["isbn"] == vol(3).isbn for w in db.list_watches("volume"))  # auto-watched for stock
 
 
+def test_claim_run_lets_one_caller_win_per_gap():
+    assert db.claim_run("t", 3600, now=1000.0)
+    assert not db.claim_run("t", 3600, now=1000.0)  # server + wake task at the same moment
+    assert not db.claim_run("t", 3600, now=4000.0)
+    assert db.claim_run("t", 3600, now=4600.0)
+    assert db.last_run("t") == 4600.0
+
+
+def test_run_if_due_skips_when_recently_checked(monkeypatch):
+    runs = []
+    monkeypatch.setattr(watcher, "wait_for_network", lambda: True)
+    monkeypatch.setattr(watcher, "check_all", lambda send=True: runs.append(1) or {"volumes": 0})
+    db.conn().execute("DELETE FROM meta WHERE key = 'last_run:watchlist'")
+    assert watcher.run_if_due() == {"volumes": 0}
+    assert watcher.run_if_due() is None
+    assert len(runs) == 1
+
+
 # --- notifications -------------------------------------------------------------
 
 def test_restock_embed():

@@ -50,6 +50,10 @@ CREATE TABLE IF NOT EXISTS events (
     message TEXT NOT NULL,
     isbn TEXT
 );
+CREATE TABLE IF NOT EXISTS meta (
+    key TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+);
 """
 
 
@@ -161,3 +165,26 @@ def log_event(kind: str, message: str, isbn: str | None = None) -> None:
 
 def recent_events(limit: int = 50) -> list[dict]:
     return [dict(r) for r in conn().execute("SELECT * FROM events ORDER BY id DESC LIMIT ?", (limit,))]
+
+
+# --- scheduled runs ------------------------------------------------------
+
+def last_run(name: str) -> float | None:
+    row = conn().execute("SELECT value FROM meta WHERE key = ?", (f"last_run:{name}",)).fetchone()
+    return float(row["value"]) if row else None
+
+
+def claim_run(name: str, min_gap_s: float, now: float | None = None) -> bool:
+    """Atomically mark `name` as run now, unless it already ran within `min_gap_s`.
+
+    The server's loop and the Windows wake task both try to claim the watchlist check,
+    possibly at the same moment after a wake; this single statement lets only one win.
+    """
+    now = time.time() if now is None else now
+    with conn() as c:
+        cur = c.execute(
+            "INSERT INTO meta (key, value) VALUES (?, ?) "
+            "ON CONFLICT(key) DO UPDATE SET value = excluded.value WHERE CAST(meta.value AS REAL) <= ?",
+            (f"last_run:{name}", repr(now), now - min_gap_s),
+        )
+        return cur.rowcount == 1
