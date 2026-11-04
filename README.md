@@ -1,5 +1,7 @@
 # Manga Tracker
 
+[![tests](https://github.com/Ashen00001/manga-tracker/actions/workflows/tests.yml/badge.svg)](https://github.com/Ashen00001/manga-tracker/actions/workflows/tests.yml) ![license](https://img.shields.io/badge/license-MIT-blue)
+
 Search a manga series, pick a volume, and see **which stores near you have it on the shelf right now**, with the cheapest one on top. Like an Amazon product page, but for stores you can drive to.
 
 - **Search** a series ("frieren") or a specific volume ("chainsaw man 17", or an ISBN)
